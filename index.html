@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- the snake -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+    <title>hai</title>
+    <!-- styles -->
+     <style>
+        /* Modern Reset & Dark Theme Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #0f1115;
+    background-image: 
+        radial-gradient(circle at 50% 30%, #1e2430 0%, #0f1115 70%);
+    color: #e2e8f0;
+    padding: 20px;
+}
+
+/* Container styling around the form */
+form {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+}
+
+/* Decorative Lens Crosshair Header Accent */
+form::before {
+    content: "📷 PHOTOGRAPHY CLUB";
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #00d2ff;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+/* Input Fields */
+input[type="text"] {
+    background: rgba(15, 17, 21, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+input[type="text"]::placeholder {
+    color: #64748b;
+}
+
+input[type="text"]:focus {
+    border-color: #00d2ff;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.25);
+    background: rgba(20, 25, 35, 0.9);
+}
+
+/* Shutter-Style Button */
+input[type="button"] {
+    background: linear-gradient(135deg, #00d2ff 0%, #0072ff 100%);
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.15s ease, box-shadow 0.25s ease;
+    margin-top: 0.5rem;
+}
+
+input[type="button"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 210, 255, 0.35);
+}
+
+input[type="button"]:active {
+    transform: translateY(0);
+}
+
+/* PyScript Output Container */
+#result {
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+    font-size: 1rem;
+    color: #38ef7d;
+    font-weight: 500;
+    empty-cells: hide;
+}
+     </style>
+</head>
+<body>
+    <form>
+        <input type="text" id="first" placeholder="First name">
+        <input type="text" id="last" placeholder="Last name">
+        <input type="button" py-click="namecheck" value="Add">
+    </form>
+    <div id="result"></div>
+
+    <py-script src="main.py"></py-script>
+</body>
+</html>
